@@ -6,12 +6,12 @@ h1, h2, h3, h4 {
     color: rgba(204, 51, 204, 0.5);
 }
 
-#hanoi-header {
+#header {
     min-height: 20vh;
     background-color: rgba(182, 51, 204, 0.64);
 }
 
-#hanoi-header > h1 {
+#header > h1 {
     font-size: 7vh;
     text-align:center;
     margin: 0rem;
@@ -28,13 +28,14 @@ h1, h2, h3, h4 {
     font-size: 6rem;
     color: rgb(204,51,51);
 }
+
 #scoreboard:before {
-    content: 'moves';
+    content: 'plays';
     font-size: 0.5em;
     color: rgb(204,51,51);
 }
 
-#gameBoard {
+#gameboard {
     min-height: 90vh;
     display: flex;
     background: rgba(51, 204, 204, 0.3);
@@ -51,10 +52,12 @@ h1, h2, h3, h4 {
     cursor: pointer;
 }
 
+/*Rods*/
+
 .column:before {
     content: '';
     width: 1.5rem;
-    background: #33cccc;
+    background: #b82e2e;
     height: 20rem;
     margin-left: auto;
     margin-right: auto;
@@ -69,6 +72,7 @@ h1, h2, h3, h4 {
     background: rgba(255, 224, 96, 0.6);
 }
 
+/*parent disc*/
 .disc {
     height: 3rem;
     background: #cc3333;
@@ -80,17 +84,14 @@ h1, h2, h3, h4 {
     transition: 1s;
 }
 
-.disc:nth-last-of-type(1) {bottom: 0.1rem;}
-.disc:nth-last-of-type(2) {bottom: 3.2rem;}
-.disc:nth-last-of-type(3) {bottom: 6.3rem;}
-.disc:nth-last-of-type(4) {bottom: 9.4rem;}
-.disc:nth-last-of-type(5) {bottom: 12.5rem;}
+/*children discs*/
 
 .disc.layer1 {
     width: 9rem;
     left: calc(50% - 4.5rem);
     background: #cc3333;
 }
+
 .disc.layer2 {
     width: 13rem;
     left: calc(50% - 6.5rem);
@@ -116,24 +117,31 @@ h1, h2, h3, h4 {
     top: -10rem;
 }
 
-#options {
+.disc:nth-last-of-type(1) {bottom: 0.1rem;}
+.disc:nth-last-of-type(2) {bottom: 3.2rem;}
+.disc:nth-last-of-type(3) {bottom: 6.3rem;}
+.disc:nth-last-of-type(4) {bottom: 9.4rem;}
+.disc:nth-last-of-type(5) {bottom: 12.5rem;}
+
+#playchoices {
     position: absolute;
     left: 0rem;
     top: 0rem;
     width: 100%;
     z-index: 10;
 }
-#options h1, #options h2 {
+
+#playchoices h1, h2 {
     text-align: center
 }
-#options h1 {
+#playchoices h1 {
     font-size: 6rem;
 }
-#options h2 {
+#playchoices h2 {
     font-size: 4rem;
 }
 
-.button-row {
+.buttons {
     display: flex;
     margin: 5rem auto 0rem auto;
     width: 80%;
@@ -173,22 +181,22 @@ button:hover {
      html {
         font-size: 5px;
      }
-     .button-row {
+     .buttons {
         flex-direction: column;
      }
-     .button-row > button {
+     .buttons > button {
         font-size: 5rem;
         border-width: 0.5rem;
         margin-bottom: 0.5rem;
      }
-     #options h1 {
+     #playchoices h1 {
         font-size: 2em;
         text-align: center;
      }
 }
 
 @media only screen and (max-width : 480px) {
-    #hanoi-header > h1 {
+    #header > h1 {
         text-align: center;
         font-size: 7rem;
         margin: 0rem;
